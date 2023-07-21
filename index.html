@@ -6,9 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dog Shelter</title>
     <link rel="stylesheet" href="./styles/styles.css" />
+    <script src="./script.js" defer></script>
   </head>
   <body>
     <header>
+      <div class="mobile-menu">
+        <div class="mobile-content">
+          <div class="shelter">
+            <div>
+              <p class="cozy">Cozy House</p>
+              <p>Shelter for pets in Boston</p>
+            </div>
+            <div class="burger menu-close">
+              <img src="./images/Burger.svg" alt="burger">
+            </div>
+          </div>
+          <div class="mobile-list">
+            <ul>
+              <li><a href="" id="active">About the shelter</a></li>
+              <li><a href="./our-pets.html">Our pets</a></li>
+              <li><a href="">Help the shelter</a></li>
+              <li><a href="">Contacts</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
       <div class="container">
         <div class="header-wrapper">
           <div class="header-wrapper__left">
@@ -18,14 +40,14 @@
           <div class="header-wrapper__right">
             <nav>
               <ul>
-                <li class="active"><a href="#">About the Shelter</a></li>
+                <li id="active"><a href="#">About the Shelter</a></li>
                 <li><a href="./our-pets.html" target="_self">Our pets</a></li>
                 <li><a href="#">Help the shelter</a></li>
                 <li><a href="#">Contacts</a></li>
               </ul>
             </nav>
           </div>
-          <div class="burger">
+          <div class="burger menu-open">
             <img src="./images/Burger.svg" alt="burger">
           </div>
         </div>
