@@ -12,7 +12,7 @@ body {
 
 img {
   display: block;
-  max-width: 90%;
+  max-width: 100%;
 }
 
 a {
@@ -64,11 +64,16 @@ header {
 }
 
 .header-wrapper__right a {
-  color: #fff;
+  color: #cdcdcd;
   line-height: 24px;
   font-family: "Arial";
   font-weight: 400;
   font-size: 15px;
+}
+
+.header-wrapper__right a:hover {
+  color: #fafafa;
+  transition: 0.4s;
 }
 
 .cozy {
@@ -139,6 +144,7 @@ h1 {
 
 .starter-wrapper__left button:hover {
   background-color: #fddcc4;
+  transition: 0.4s;
 }
 
 .starter-wrapper__right {
@@ -150,7 +156,16 @@ h1 {
   transform: translateX(100%);
   width: 100%;
   height: 100vh;
-  background-color: rgba(41, 41, 41, 0.6);
+  background: linear-gradient(
+    to left,
+    rgba(41, 41, 41, 0.6),
+    rgba(41, 41, 41, 0.6),
+    rgba(41, 41, 41, 0.5),
+    rgba(41, 41, 41, 0.4),
+    rgba(41, 41, 41, 0.3),
+    rgba(41, 41, 41, 0.2),
+    rgba(41, 41, 41, 0)
+  );
   left: 0;
   top: 0;
   display: flex;
@@ -188,9 +203,15 @@ h1 {
   text-align: center;
 }
 
-.visible {
+.mobile-menu.visible {
   visibility: visible;
   transform: translateX(0%);
+  transition: 1s;
+}
+
+.popup.visible-modal {
+  visibility: visible;
+  opacity: 1;
   transition: 1s;
 }
 
@@ -288,6 +309,7 @@ h2 {
 .slider button:hover {
   border: #fddcc4 2px solid;
   background-color: #fddcc4;
+  transition: 0.4s;
 }
 
 .pet-cards {
@@ -319,21 +341,23 @@ h2 {
   color: #545454;
 }
 
-.pet-cards__item a {
+.pet-cards__item button {
   border: 2px solid #f1cdb3;
   border-radius: 100px;
-  padding: 15px 45px;
+  padding: 13px 45px 17px;
   font-weight: 400;
   font-size: 17px;
   line-height: 130%;
   font-family: "Georgia";
   color: #292929;
   display: inline-block;
+  width: auto;
 }
 
 .pet-cards__item a:hover {
   border: 2px solid #fddcc4;
   background-color: #fddcc4;
+  transition: 0.4s;
 }
 
 .rest-link {
@@ -341,11 +365,95 @@ h2 {
   text-align: center;
   width: 260px;
   margin: auto;
+  cursor: pointer;
 }
 
-#active {
-  border-bottom: #f1cdb3 3px solid;
-  color: #fafafa;
+.popup {
+  background-color: rgba(41, 41, 41, 0.6);
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 1s;
+}
+
+.close-button button {
+  border: none;
+  position: absolute;
+  top: -52px;
+  right: -52px;
+  cursor: pointer;
+}
+
+.popup-content {
+  background-color: #fafafa;
+  width: 900px;
+  height: 500px;
+  display: flex;
+  border-radius: 9px;
+  position: relative;
+}
+
+.pet-img {
+  height: 500px;
+  width: 500px;
+}
+
+.pet-img img {
+  width: 100%;
+  border-radius: 9px;
+}
+
+.pet-info {
+  width: 400px;
+  padding: 10px;
+}
+
+.pet-info h3 {
+  margin-top: 50px;
+  font-family: Georgia;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 2.1px;
+  margin-bottom: 10px;
+}
+
+.pet-info p:first-of-type {
+  font-family: Georgia;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 1.2px;
+}
+
+.pet-info p:last-of-type {
+  font-family: Georgia;
+  font-size: 15px;
+  line-height: 110%;
+  letter-spacing: 0.78px;
+  margin: 40px 0 40px;
+}
+
+.pet-info ul {
+  list-style: none;
+}
+
+.pet-info ul li {
+  margin: 5px 0 5px 0;
+}
+
+.pet-info ul li::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  border: 2px solid #f1cdb3;
+  border-radius: 2px;
+  margin-right: 10px;
 }
 
 .rest-link a {
@@ -490,6 +598,12 @@ footer {
   height: 32px;
 }
 
+#active {
+  border-bottom: #f1cdb3 3px solid;
+  color: #fafafa;
+  padding-bottom: 3px;
+}
+
 .footer-info p {
   font-family: "Georgia";
   font-weight: 400;
@@ -508,6 +622,7 @@ footer {
 
 .rest-link a:hover {
   background-color: #fddcc4;
+  transition: 0.4s;
 }
 
 @media (max-width: 1280px) {
